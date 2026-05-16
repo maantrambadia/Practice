@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+}
+
+main {
+    padding-inline: 6rem;
+    background-color: #FFFFFF;
+}
+
+.section-1 {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+header {
+    padding: 2.5rem 1.25rem;
+    border-bottom: 0.15rem solid #F4F4F5;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.nav-logo img {
+    width: 7.5rem;
+}
+
+.nav-tag {
+    padding: 0.5rem;
+    border-radius: 1.25rem;
+    background-color: #EDDED5;
+}
+
+.nav-tag h4 {
+    font-size: 0.75rem;
+    font-weight: 400;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 1.88rem;
+}
+
+.nav-menu a {
+    color: #000;
+    text-decoration: none;
+}
+
+.nav-menu a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 0.14rem;
+}
+
+#cart-value {
+    padding: 0 0.313rem;
+    border-radius: 0.63rem;
+    background-color: #EEDED5;
+}
+
+.nav-menu button {
+    cursor: pointer;
+    padding: 0.63rem;
+    border-radius: 1.25rem;
+    border: 0.063rem solid #272727;
+    font-family: "Inter", sans-serif;
+    background-color: transparent;
+    transition: all 0.3s ease-in;
+}
+
+.nav-menu button:hover {
+    color: #fff;
+    background-color: #000;
+}
+
+#menu-icon {
+    display: none;
+}
+
+.hero h1 {
+    font-weight: 600;
+    font-size: 7rem;
+    line-height: 90%;
+    padding-top: 4.375rem;
+}
+
+.hero h2 {
+    padding-top: 2.5rem;
+    font-size: 2.1875rem;
+    line-height: 3.125rem;
+    font-weight: 400;
+}
+
+.hero button {
+    margin-top: 2rem;
+    cursor: pointer;
+    padding: 1.25rem;
+    border-radius: 1.25rem;
+    border: none;
+    font-family: "Inter", sans-serif;
+    background-color: #000;
+    color: #fff;
+    font-size: 0.9375rem;
+}
+
+.marquee-brands {
+    margin-top: 5rem;
+    overflow: hidden;
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 30s linear infinite;
+}
+
+.marquee-group {
+    display: flex;
+    flex-shrink: 0;
+}
+
+.marquee-group img {
+    width: 6.3rem;
+    margin: 0 3rem;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.services-brand {
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.services-brand .card {
+    width: 25rem;
+    height: 25rem;
+    padding: 2rem;
+    text-align: justify;
+    background-color: #F4F4F5;
+}
+
+.services-brand .card p {
+    margin-top: 2rem;
+    line-height: 2rem;
+    color: #8a8a8a;
+}
+
+.services-brand .card a {
+    display: block;
+    color: #000;
+    margin-top: 2rem;
+}
+
+.section-2 {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding-inline: 1rem;
+    }
+
+    header {
+        height: 10vh;
+        padding: 1.5rem 0.5rem;
+        border-bottom: 0.12rem solid #F4F4F5;
+    }
+
+    .nav-logo img {
+        width: 6rem;
+    }
+
+    .nav-tag {
+        display: none;
+    }
+
+    .nav-menu a,
+    button {
+        display: none;
+    }
+
+    #menu-icon {
+        display: block;
+        font-size: 1.5rem;
+    }
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+        line-height: 4rem;
+        padding-top: 0;
+        text-align: center;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+        line-height: 2.3rem;
+        text-align: center;
+    }
+
+    .hero button {
+        margin-top: 2rem;
+        display: inline;
+    }
+
+    .marquee-brands {
+        margin-top: 2rem;
+    }
+
+    .services-brand {
+        margin-top: 2rem;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .services-brand .card {
+        width: 21rem;
+    }
+}
