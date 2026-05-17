@@ -186,6 +186,130 @@ nav {
     gap: 2rem;
 }
 
+.section-header {
+    border-bottom: 0.15rem solid #F4F4F5;
+    margin-top: 5rem;
+}
+
+.section-header h5 {
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section-heading h1 {
+    font-size: 3.5rem;
+    font-weight: 500;
+}
+
+.section-heading button {
+    cursor: pointer;
+    padding: 0.63rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 1.25rem;
+    border: 0.063rem solid #272727;
+    font-family: "Inter", sans-serif;
+    background-color: transparent;
+    transition: all 0.3s ease-in;
+}
+
+.section-heading button:hover {
+    color: #fff;
+    background-color: #000;
+}
+
+.showcase-work-part-1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.showcase-work-part-1 img {
+    width: 50rem;
+    transition: all 0.1s ease-in;
+}
+
+.showcase-work-part-1 img:hover {
+    transform: scale(1.0050);
+}
+
+.showcase-work-part-1 .card-description {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.showcase-work-part-1 .card-description button {
+    cursor: pointer;
+    padding: 0.63rem 1rem;
+    font-size: 0.8rem;
+    border-radius: 1.25rem;
+    border: 0.063rem solid #272727;
+    font-family: "Inter", sans-serif;
+    background-color: transparent;
+    transition: all 0.3s ease-in;
+}
+
+.showcase-work-part-1 .card-description button:hover {
+    color: #fff;
+    background-color: #000;
+}
+
+.showcase-work-part-2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.showcase-work-part-2 img {
+    width: 50rem;
+    transition: all 0.1s ease-in;
+}
+
+.showcase-work-part-2 img:hover {
+    transform: scale(1.0050);
+}
+
+.showcase-work-part-2 .card-description {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.showcase-work-part-2 .card-description button {
+    cursor: pointer;
+    padding: 0.63rem 1rem;
+    font-size: 0.8rem;
+    border-radius: 1.25rem;
+    border: 0.063rem solid #272727;
+    font-family: "Inter", sans-serif;
+    background-color: transparent;
+    transition: all 0.3s ease-in;
+}
+
+.showcase-work-part-2 .card-description button:hover {
+    color: #fff;
+    background-color: #000;
+}
+
+.section-3 {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
 @media (max-width: 768px) {
     main {
         padding-inline: 1rem;
@@ -252,5 +376,85 @@ nav {
 
     .services-brand .card {
         width: 21rem;
+    }
+
+    .section-header h5 {
+        text-align: center;
+    }
+
+    .section-heading {
+        justify-content: center;
+    }
+
+    .section-heading h1 {
+        font-size: 2rem;
+    }
+
+    .section-heading button {
+        display: none;
+    }
+
+    .showcase-work-part-1 {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .showcase-work-part-1 img {
+        width: 21rem;
+    }
+
+    .showcase-work-part-1 img:hover {
+        transform: none;
+    }
+
+    .showcase-work-part-1 .card-description {
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .showcase-work-part-1 .card-description button {
+        display: inline;
+        padding: 0.53rem 0.80rem;
+        font-size: 0.7rem;
+        transition: none;
+    }
+
+    .showcase-work-part-1 .card-description button:hover {
+        color: initial;
+        background-color: initial;
+    }
+
+    .showcase-work-part-2 {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .showcase-work-part-2 img {
+        width: 21rem;
+    }
+
+    .showcase-work-part-2 img:hover {
+        transform: none;
+    }
+
+    .showcase-work-part-2 .card-description {
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .showcase-work-part-2 .card-description button {
+        display: inline;
+        padding: 0.53rem 0.80rem;
+        font-size: 0.7rem;
+        transition: none;
+    }
+
+    .showcase-work-part-2 .card-description button:hover {
+        color: initial;
+        background-color: initial;
     }
 }
