@@ -160,7 +160,7 @@ nav {
 }
 
 .services-brand .card {
-    width: 25rem;
+    width: 22rem;
     height: 25rem;
     padding: 2rem;
     text-align: justify;
@@ -310,6 +310,37 @@ nav {
     gap: 2rem;
 }
 
+.section-3 .blogs {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.section-3 .blogs .card {
+    width: 22rem;
+}
+
+.section-3 .blogs img {
+    width: 25rem;
+    transition: all 0.1s ease-in;
+}
+
+.section-3 .blogs img:hover {
+    transform: scale(1.0050);
+}
+
+.blogs .card p {
+    margin-top: 1rem;
+}
+
+.blogs .card a {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: #000;
+}
+
 @media (max-width: 768px) {
     main {
         padding-inline: 1rem;
@@ -456,5 +487,23 @@ nav {
     .showcase-work-part-2 .card-description button:hover {
         color: initial;
         background-color: initial;
+    }
+
+    .section-3 .blogs {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .section-3 .blogs .card {
+        width: 20rem;
+    }
+
+    .section-3 .blogs img {
+        width: 20rem;
+        transition: none;
+    }
+
+    .section-3 .blogs img:hover {
+        transform: none;
     }
 }
