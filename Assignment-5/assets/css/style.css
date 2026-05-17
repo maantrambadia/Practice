@@ -617,6 +617,12 @@ nav {
         background-color: initial;
     }
 
+    .section-3 {
+        min-height: 100vh;
+        max-height: none;
+        margin-bottom: 1rem;
+    }
+
     .section-3 .blogs {
         align-items: center;
         flex-direction: column;
