@@ -1,0 +1,841 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+
+main nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: white;
+    position: fixed;
+    border-bottom: 1px solid #2A2857;
+    z-index: 1000;
+}
+
+nav .left-nav {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 20px;
+}
+
+.left-nav i {
+    font-size: 20px;
+}
+
+.left-nav .a2 {
+    display: none;
+}
+
+nav .right-nav {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: nowrap;
+    font-size: 11px;
+    justify-content: flex-end;
+    font-family: "poppins", sans-serif;
+    font-weight: 600;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+.right-nav a i {
+    font-size: 20px;
+}
+
+.section-1 {
+    height: 600px;
+    background-color: orange;
+    background-image: url("https://www.twoleavestea.com/cdn/shop/files/AlpineBerry.webp?v=1774284236&width=1800.0");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    padding: 40px;
+    align-items: flex-end;
+}
+
+.text-area-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.text-area-1 h1 {
+    font-size: 60px;
+    line-height: 55px;
+    font-weight: 500;
+}
+
+.text-area-1 p {
+    font-family: "poppins", sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+button {
+    font-family: "poppins", sans-serif;
+    padding: 15px 50px;
+    width: fit-content;
+    color: white;
+    background-color: #2A2857;
+    border: none;
+    font-size: 16px;
+    border-radius: 50px;
+}
+
+button:hover {
+    cursor: pointer;
+    scale: 1.1;
+    transition: 0.3s;
+}
+
+.section-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 0px;
+}
+
+.section-2 h1 {
+    font-size: 50px;
+    line-height: 50px;
+    font-weight: 500;
+}
+
+.section-3 {
+    padding: 20px 20px 20px 50px;
+    overflow: auto;
+    display: flex;
+    gap: 30px;
+    white-space: nowrap;
+    scrollbar-width: none;
+}
+
+.section-3 .cards {
+    min-height: 500px;
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.inner-box-1 {
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid black;
+    height: 70%;
+    padding: 10px;
+    background-size: 300px;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.inner-box-1:hover {
+    background-size: 350px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.img-1 {
+    background-color: #C1EE91;
+    background-image: url("https://www.twoleavestea.com/cdn/shop/files/organic_tropical_green_tea_sachet_featured.webp?v=1771579242&width=240");
+}
+
+.img-2 {
+    background-color: #FFD884;
+    background-image: url("https://www.twoleavestea.com/cdn/shop/files/bundle-herbal-tea-trio-featured-image.webp?v=1772174356&width=240");
+}
+
+.img-3 {
+    background-image: url("https://www.twoleavestea.com/cdn/shop/files/peppermint_naked_featured.webp?v=1771580547&width=240");
+    background-color: #B0E8C1;
+}
+
+.img-4 {
+    background-color: #C0E571;
+    background-image: url("https://www.twoleavestea.com/cdn/shop/files/Latte_Mix.webp?v=1771386671&width=240");
+}
+
+.img-5 {
+    background-color: #FFD1B8;
+    background-image: url("https://www.twoleavestea.com/cdn/shop/files/organic_high_mountain_chai_tea_sachet_featured.webp?v=1771578289&width=240");
+}
+
+.img-6 {
+    background-color: #FFCB96;
+    background-image: url("https://www.twoleavestea.com/cdn/shop/files/Latte_Mix_b400f40c-730f-4122-9058-cfc4e5bf8faf.webp?v=1771389945&width=240");
+}
+
+.upper-div {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.upper-div h3 {
+    font-family: midnight;
+    font-size: 20px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-self: center;
+    border: 1px solid black;
+    align-self: center;
+    padding: 3px 10px;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+.upper-div p {
+    font-family: "poppins", sans-serif;
+    font-size: 13px;
+    display: flex;
+    gap: 3px;
+}
+
+.lower-div {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.text:hover {
+    scale: 1.1;
+    cursor: pointer;
+}
+
+.inner-box-2 {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.inner-box-2 h3 {
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 25px;
+}
+
+.text-part {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-family: "poppins", sans-serif;
+}
+
+.inner-box-2 p {
+    font-size: 11px;
+    width: 100%;
+}
+
+.section-4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px;
+    border-bottom: 2px solid black;
+}
+
+.section-5 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 50px;
+}
+
+.section-5 .dis {
+    font-size: 55px;
+    transform: rotate(-5deg);
+    font-family: midnight;
+    border: 1px solid black;
+    background-color: #FF7F31;
+    width: fit-content;
+    padding: 0px 10px;
+    z-index: -1;
+    border-radius: 10px;
+}
+
+.section-5 h1 {
+    font-size: 80px;
+    line-height: 75px;
+    font-weight: 500;
+}
+
+.section-5 input {
+    font-size: 30px;
+    border-radius: 10px;
+    padding: 15px 170px 10px 15px;
+    width: fit-content;
+}
+
+.section-6 {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.section-6 p {
+    font-size: 17px;
+    font-family: "poppins", sans-serif;
+}
+
+.text-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.text-box h3 {
+    font-size: 30px;
+    background-color: #DAEAFF;
+    padding: 10px 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-weight: 200;
+}
+
+.text-box h3:hover {
+    cursor: pointer;
+    background-color: #2A2857;
+    color: white;
+    transition: 0.3s;
+}
+
+.section-7 {
+    height: 1500px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 200px;
+    padding: 20px;
+    padding-top: 150px;
+    background-image: url("https://www.twoleavestea.com/cdn/shop/files/adam-vradenburg-_gu7E90QChU-unsplash_1_1.webp?v=1771592855&width=600");
+}
+
+.sectio-7 .dis {
+    z-index: -1;
+}
+
+.section-7 h1 {
+    font-family: midnight;
+    background-color: #A2C9FC;
+    width: fit-content;
+    transform: rotate(-5deg);
+    font-size: 50px;
+    border-radius: 5px;
+    padding: 0px 3px;
+    border: 1px solid black;
+}
+
+.section-7 h2 {
+    font-size: 150px;
+    font-family: midnight;
+    text-align: center;
+    line-height: 150px;
+    color: white;
+}
+
+.section-7 h3 {
+    font-size: 55px;
+    color: white;
+    text-align: center;
+    line-height: 55px;
+    width: 90%;
+    font-weight: 500;
+}
+
+.section-9 {
+    padding: 10px 30px 10px 50px;
+    display: flex;
+    overflow: auto;
+    scrollbar-width: none;
+    gap: 20px;
+}
+
+.section-9 .card-1 {
+    height: 400px;
+    border-radius: 10px;
+    width: 300px;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.card-1 .top-card {
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    text-align: center;
+}
+
+.card-11 {
+    background-color: #F5AF8A;
+}
+
+.card-22 {
+    background-color: #ABDF74;
+}
+
+.card-33 {
+    background-color: #FFD265;
+}
+
+.card-44 {
+    background-color: #D9C2E1;
+}
+
+.card-55 {
+    background-color: #ADE674;
+}
+
+/* .down-1{
+    background-color: #EA6D44;
+} */
+
+.card-1 .down-card {
+    height: 30%;
+    border-radius: 10px;
+}
+
+
+.down-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "poppins", sans-serif;
+    line-height: 16px;
+    padding: 10px;
+}
+
+.left-down img {
+    height: 100px;
+    border-right: 1px solid black;
+}
+
+.down-card .right-down {
+    display: flex;
+    padding-left: 10px;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 15px;
+}
+
+.section-10 {
+    min-height: 200px;
+    margin-top: 20px;
+    background-color: #2A2857;
+    display: flex;
+}
+
+.section-10 .left-part-10 {
+    height: 500px;
+    width: 50%;
+    background-color: orange;
+    background-image: url("https://www.twoleavestea.com/cdn/shop/files/Our_Cafe_Wholesale_Partners.webp?v=1773753185&width=511");
+    background-position: center;
+    background-size: cover;
+}
+
+.section-10 .right-part-10 {
+    color: white;
+    font-size: 40px;
+    line-height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-weight: 300;
+}
+
+.section-11 {
+    min-height: 300px;
+    background-color: #9F6429;
+}
+
+.section-11 .up-part-11 {
+    padding: 100px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.up-part-11 h1 {
+    font-size: 60px;
+}
+
+.up-part-11 p {
+    font-size: 20px;
+}
+
+.down-part-11 {
+    min-height: 300px;
+    width: 100%;
+    padding: 20px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.inner-part-11 {
+    border-radius: 20px;
+    min-height: 100px;
+    padding: 20px;
+    background-color: #FFCB96;
+    width: 100%;
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-evenly;
+}
+
+.right-inner-part-11 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 30px 50px;
+}
+
+.right-inner-part-11 h1 {
+    font-size: 70px;
+    color: black;
+    line-height: 65px;
+}
+
+.right-inner-part-11 p {
+    font-size: 18px;
+    font-family: "poppins", sans-serif;
+}
+
+.left-inner-part-11 img {
+    height: 500px;
+    transform: translateY(-100px);
+}
+
+.section-12 h1 {
+    font-size: 60px;
+    color: black;
+    padding: 150px 20px;
+    line-height: 60px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+}
+
+.section-13 {
+    height: 600px;
+    background-color: blue;
+    background-image: url("https://www.twoleavestea.com/cdn/shop/files/1440.webp?v=1771593223&width=750.0");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    overflow-x: hidden;
+}
+
+.text-box-part-13 {
+    height: 500px;
+    width: 400px;
+    background-color: #F26412;
+    border-radius: 20px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    justify-content: space-between;
+}
+
+.text-box-part-13 h1 {
+    font-size: 50px;
+    line-height: 50px;
+    color: white;
+}
+
+footer {
+    background-color: #A2C9FC;
+    padding: 20px;
+}
+
+.left-foot-1 {
+    gap: 10px;
+    display: flex;
+}
+
+.footer-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 200px;
+}
+
+.footer-top input {
+    padding: 15px 90px 15px 15px;
+    border-radius: 10px;
+    border: none;
+}
+
+.right-foot-1 {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+}
+
+.right-foot-1 p {
+    color: #2A2857;
+    font-size: 40px;
+}
+
+.footer-bottom {
+    background-color: #2A2857;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 30px;
+    gap: 140px;
+}
+
+.footer-box-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.footer-box-1 h3 {
+    color: white;
+    font-size: 25px;
+}
+
+.footer-box-1 p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.719);
+    font-family: "poppins", sans-serif;
+    height: 25px;
+    width: fit-content;
+}
+
+.text-foot-p {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-box-1 p:hover {
+    cursor: pointer;
+    border-bottom: 1px solid white;
+    transition: 0.5s;
+}
+
+@media (max-width:1110px) {
+    .left-nav .a1 {
+        display: none;
+    }
+
+    .right-nav .a1 {
+        display: none;
+    }
+
+    .left-nav .a2 {
+        display: block;
+    }
+
+}
+
+@media (max-width:680px) {
+    .section-1 {
+        background-image: url("https://www.twoleavestea.com/cdn/shop/files/AlpineBerry_mobile.webp?v=1774284087&width=511");
+        height: 600px;
+        padding: 20px 30px;
+    }
+
+    .text-area-1 h1 {
+        font-size: 60px;
+    }
+
+    .section-2 h1 {
+        font-size: 40px;
+    }
+
+    .section-5 .dis {
+        padding: 10px 10px;
+    }
+
+    .section-5 h1 {
+        font-size: 40px;
+        line-height: 40px;
+    }
+
+    .section-5 input {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .section-6 {
+        padding-top: 0px;
+    }
+
+    .section-6 h3 {
+        font-size: 15px;
+    }
+
+    .section-7 {
+        gap: 150px;
+        height: 1200px;
+    }
+
+    .section-7 h2 {
+        font-size: 80px;
+        line-height: 70px;
+    }
+
+    .section-7 h3 {
+        font-size: 30px;
+        line-height: 33px;
+    }
+
+    .section-10 {
+        flex-direction: column;
+    }
+
+    .section-10 .left-part-10 {
+        width: 100%;
+        height: 300px;
+    }
+
+    .section-10 .right-part-10 {
+        font-size: 20px;
+        line-height: 40px;
+    }
+
+    .up-part-11 h1 {
+        font-size: 25px;
+    }
+
+    .up-part-11 p {
+        font-size: 16px;
+    }
+
+    .inner-part-11 {
+        flex-direction: column;
+    }
+
+    .left-inner-part-11 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .left-inner-part-11 img {
+        height: 330px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(-50px);
+    }
+
+    .right-inner-part-11 {
+        padding: 0px;
+    }
+
+    .right-inner-part-11 h1 {
+        font-size: 50px;
+        line-height: 50px;
+    }
+
+    .right-inner-part-11 p {
+        font-size: 14px;
+    }
+
+    .section-12 h1 {
+        font-size: 30px;
+        line-height: 30px;
+        padding: 30px 30px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .left-foot-1 {
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .left-foot-1 button {
+        margin-top: 15px;
+    }
+
+    .right-foot-1 {
+        margin-top: 15px;
+    }
+
+    .footer-bottom {
+        justify-content: flex-start;
+        gap: 70px;
+    }
+}
+
+@media (max-width:500px) {
+    .text-area-1 h1 {
+        font-size: 40px;
+        line-height: 40px;
+    }
+
+    .text-area-1 p {
+        font-size: 12px;
+    }
+
+    .section-2 h1 {
+        font-size: 30px;
+        line-height: 30px;
+        padding: 10px 10px;
+    }
+}
