@@ -1,0 +1,300 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: "Geist", sans-serif;
+}
+
+main {
+    background-color: #FAFAF9;
+}
+
+.section-1 {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+header {
+    padding: 1.1rem 2rem;
+    background-color: #f3f3f8;
+    border-bottom: 0.13rem dashed #dfdfdf;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo h1 {
+    font-family: "Geist Mono", monospace;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+}
+
+.nav-menu button {
+    font-family: "Geist Mono", monospace;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    border: 2px solid #403dfc;
+    background-color: #5E5AFF;
+    color: #fff;
+    text-transform: uppercase;
+    transition: transform 0.15s ease-out;
+    will-change: transform;
+}
+
+.nav-menu button:active {
+    transform: scale(0.92);
+}
+
+.create-task-module {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0000005b;
+    backdrop-filter: blur(0.20rem);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in;
+}
+
+.create-task-module.show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.create-task-form {
+    width: 100%;
+    max-width: 500px;
+    background-color: #FFFFFF;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    border: 0.1rem solid #bababa;
+}
+
+.create-task-form-header {
+    background-color: #F3F3F8;
+    padding: 2rem 1.5rem;
+    border-radius: 0rem 0rem 1.5rem 1.5rem;
+    border-bottom: 0.1rem dashed #c5c5c5;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.create-task-form-header p {
+    color: #717171;
+}
+
+.create-task-form-body {
+    padding: 2rem;
+}
+
+.create-task-form-body form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.create-task-form-body form label {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.create-task-form-body form input {
+    font-family: "Geist", sans-serif;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+    padding: 0.7rem;
+    border-radius: 0.8rem;
+    border: 0.1rem dashed #b7b7b7;
+}
+
+.create-task-form-body form input:focus {
+    outline: none;
+}
+
+.create-task-form-body form select {
+    font-family: "Geist", sans-serif;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+    padding: 0.7rem;
+    border-radius: 0.8rem;
+    border: 0.1rem dashed #b7b7b7;
+}
+
+.create-task-form-body form select:focus {
+    outline: none;
+}
+
+.create-task-form-body form .buttons {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 1rem;
+}
+
+#cancel-button {
+    font-family: "Geist Mono", monospace;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    border: 2px solid #161414;
+    background-color: #43403f;
+    color: #fff;
+    text-transform: uppercase;
+    transition: transform 0.15s ease-out;
+    will-change: transform;
+}
+
+#cancel-button:active {
+    transform: scale(0.92);
+}
+
+#create-button {
+    font-family: "Geist Mono", monospace;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    border: 2px solid #403dfc;
+    background-color: #5E5AFF;
+    color: #fff;
+    text-transform: uppercase;
+    transition: transform 0.15s ease-out;
+    will-change: transform;
+}
+
+#create-button:active {
+    transform: scale(0.92);
+}
+
+.task-cards {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    min-height: 150px;
+    padding: 1rem;
+    border-radius: 0.7rem;
+    border: 2px dashed #d1d1d1;
+    background-color: #f3f3f8;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.card h3 {
+    font-family: "Geist Mono", monospace;
+    text-transform: uppercase;
+}
+
+.card.done {
+    opacity: 0.6;
+    background-color: #d4edda;
+}
+
+.card.done h3 {
+    text-decoration: line-through;
+}
+
+.category-badge {
+    max-width: 100px;
+    border: none;
+    background-color: #d0cffa;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #212121;
+    font-size: 0.8rem;
+}
+
+.buttons {
+    height: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+
+.buttons button {
+    font-family: "Geist Mono", monospace;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    border: 2px solid #fc3d3d;
+    background-color: #ff5a5a;
+    color: #fff;
+    text-transform: uppercase;
+    transition: transform 0.15s ease-out;
+    will-change: transform;
+}
+
+.buttons button:nth-child(1) {
+    border: 2px solid #403dfc;
+    background-color: #5E5AFF;
+}
+
+.buttons button:nth-child(2) {
+    border: 2px solid #ff7936;
+    background-color: #ff915a;
+}
+
+.buttons button:active {
+    transform: scale(0.92);
+}
+
+.empty-message {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: "Geist Mono", monospace;
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 1.1rem 1rem;
+    }
+
+    .nav-logo h1 {
+        font-size: 1.3rem;
+    }
+
+    .nav-menu button {
+        padding: 0.4rem 0.8rem;
+    }
+
+    .create-task-form {
+        max-width: 90vw;
+    }
+}

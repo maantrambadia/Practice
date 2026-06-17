@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Geist+Mono:ital,wght@0,100..900;1,100..900&family=Geist:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>Task Manager</title>
+</head>
+
+<body>
+    <main>
+        <section class="section-1">
+            <header>
+                <nav>
+                    <div class="nav-logo">
+                        <h1>Task Manager</h1>
+                    </div>
+                    <div class="nav-menu">
+                        <button id="create-task-button">Create Task</button>
+                    </div>
+                </nav>
+            </header>
+            <div class="task-cards"></div>
+            <div class="empty-message">No task found :(</div>
+            <div class="create-task-module">
+                <div class="create-task-form">
+                    <div class="create-task-form-header">
+                        <h3 id="create-task-title"></h3>
+                        <p id="create-task-description"></p>
+                    </div>
+                    <div class="create-task-form-body">
+                        <form id="create-task-form-body">
+                            <label>Task Title</label>
+                            <input required name="taskTitle" type="text" placeholder="Enter your task title">
+                            <label>Task Category</label>
+                            <select>
+                                <option value="Meetings">Meetings</option>
+                                <option value="Projects">Projects</option>
+                                <option value="Finance">Finance</option>
+                            </select>
+                            <div class="buttons">
+                                <button type="button" id="cancel-button">Cancel</button>
+                                <button id="create-button">Create Task</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
