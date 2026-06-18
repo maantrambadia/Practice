@@ -93,7 +93,11 @@ createTaskForm.addEventListener("submit", (e) => {
 
 const pushIntoUI = () => {
   taskCards.innerHTML = "";
-  const tasks = JSON.parse(localStorage.getItem("task")) || [];
+  let tasks = JSON.parse(localStorage.getItem("task"));
+
+  if (!tasks) {
+    tasks = [];
+  }
 
   if (tasks.length > 0) {
     tasks.forEach((e, i) => {
