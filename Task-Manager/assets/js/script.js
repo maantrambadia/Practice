@@ -14,9 +14,23 @@ const createButtonModule = document.querySelector("#create-button");
 
 const emptyMessage = document.querySelector(".empty-message");
 
+const navThemeSwitcher = document.querySelector(".nav-theme-switcher");
+const html = document.documentElement;
+
 const activeTasks = [];
 
 let editIndex = null;
+
+navThemeSwitcher.addEventListener("click", () => {
+  const currentTheme = html.dataset.theme;
+  if (currentTheme === "light") {
+    html.setAttribute("data-theme", "dark");
+    navThemeSwitcher.innerHTML = `<i class="hgi hgi-stroke hgi-rounded hgi-moon-02"></i>`;
+  } else {
+    html.setAttribute("data-theme", "light");
+    navThemeSwitcher.innerHTML = `<i class="hgi hgi-stroke hgi-rounded hgi-sun-03"></i>`;
+  }
+});
 
 createTaskButton.addEventListener("click", () => {
   createTaskTitle.textContent = "Create Task";

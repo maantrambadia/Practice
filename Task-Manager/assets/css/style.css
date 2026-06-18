@@ -1,3 +1,29 @@
+:root {
+    --bg: #fafaf9;
+    --header-bg: #f3f3f8;
+    --card-bg: #f3f3f8;
+    --card-done-bg: #78767e;
+
+    --text-color: #000000;
+    --secondary-text-color: #717171;
+    --button-text-color: #e8e8e8;
+    --border-color: #c8c8c8;
+    --form-border-color: #c8c8c8;
+}
+
+html[data-theme="dark"] {
+    --bg: #1a1a1a;
+    --header-bg: #2c2a30;
+    --card-bg: #2c2a30;
+    --card-done-bg: #46434d;
+
+    --text-color: #e8e8e8;
+    --secondary-text-color: #a2a2a2;
+    --button-text-color: #e8e8e8;
+    --border-color: #8b8b8b;
+    --form-border-color: #2f2f2f;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +36,7 @@ body {
 }
 
 main {
-    background-color: #FAFAF9;
+    background-color: var(--bg);
 }
 
 .section-1 {
@@ -22,8 +48,8 @@ main {
 
 header {
     padding: 1.1rem 2rem;
-    background-color: #f3f3f8;
-    border-bottom: 0.13rem dashed #dfdfdf;
+    background-color: var(--header-bg);
+    border-bottom: 0.13rem dashed var(--border-color);
 }
 
 nav {
@@ -37,6 +63,28 @@ nav {
     font-weight: 600;
     text-transform: uppercase;
     font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.nav-theme-switcher i {
+    display: block;
+    color: var(--text-color);
+    font-size: 1.6rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.15s ease-out;
+    will-change: transform;
+}
+
+.nav-theme-switcher i:active {
+    transform: scale(0.90);
 }
 
 .nav-menu button {
@@ -48,7 +96,7 @@ nav {
     cursor: pointer;
     border: 2px solid #403dfc;
     background-color: #5E5AFF;
-    color: #fff;
+    color: var(--button-text-color);
     text-transform: uppercase;
     transition: transform 0.15s ease-out;
     will-change: transform;
@@ -84,24 +132,28 @@ nav {
 .create-task-form {
     width: 100%;
     max-width: 500px;
-    background-color: #FFFFFF;
+    background-color: var(--bg);
     border-radius: 1.5rem;
     overflow: hidden;
-    border: 0.1rem solid #bababa;
+    border: 0.1rem solid var(--form-border-color);
 }
 
 .create-task-form-header {
-    background-color: #F3F3F8;
+    background-color: var(--header-bg);
     padding: 2rem 1.5rem;
     border-radius: 0rem 0rem 1.5rem 1.5rem;
-    border-bottom: 0.1rem dashed #c5c5c5;
+    border-bottom: 0.1rem dashed var(--border-color);
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
 }
 
+.create-task-form-header h3 {
+    color: var(--text-color);
+}
+
 .create-task-form-header p {
-    color: #717171;
+    color: var(--secondary-text-color);
 }
 
 .create-task-form-body {
@@ -117,6 +169,7 @@ nav {
 .create-task-form-body form label {
     font-size: 1rem;
     font-weight: 600;
+    color: var(--text-color);
 }
 
 .create-task-form-body form input {
@@ -125,7 +178,9 @@ nav {
     font-size: 0.9rem;
     padding: 0.7rem;
     border-radius: 0.8rem;
-    border: 0.1rem dashed #b7b7b7;
+    border: 0.1rem dashed var(--border-color);
+    background-color: var(--header-bg);
+    color: var(--text-color);
 }
 
 .create-task-form-body form input:focus {
@@ -138,7 +193,9 @@ nav {
     font-size: 0.9rem;
     padding: 0.7rem;
     border-radius: 0.8rem;
-    border: 0.1rem dashed #b7b7b7;
+    border: 0.1rem dashed var(--border-color);
+    background-color: var(--header-bg);
+    color: var(--text-color);
 }
 
 .create-task-form-body form select:focus {
@@ -162,7 +219,7 @@ nav {
     cursor: pointer;
     border: 2px solid #161414;
     background-color: #43403f;
-    color: #fff;
+    color: var(--button-text-color);
     text-transform: uppercase;
     transition: transform 0.15s ease-out;
     will-change: transform;
@@ -181,7 +238,7 @@ nav {
     cursor: pointer;
     border: 2px solid #403dfc;
     background-color: #5E5AFF;
-    color: #fff;
+    color: var(--button-text-color);
     text-transform: uppercase;
     transition: transform 0.15s ease-out;
     will-change: transform;
@@ -202,8 +259,8 @@ nav {
     min-height: 150px;
     padding: 1rem;
     border-radius: 0.7rem;
-    border: 2px dashed #d1d1d1;
-    background-color: #f3f3f8;
+    border: 2px dashed var(--border-color);
+    background-color: var(--card-bg);
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -212,11 +269,12 @@ nav {
 .card h3 {
     font-family: "Geist Mono", monospace;
     text-transform: uppercase;
+    color: var(--text-color);
 }
 
 .card.done {
     opacity: 0.6;
-    background-color: #d4edda;
+    background-color: var(--card-done-bg);
 }
 
 .card.done h3 {
@@ -251,7 +309,7 @@ nav {
     cursor: pointer;
     border: 2px solid #fc3d3d;
     background-color: #ff5a5a;
-    color: #fff;
+    color: var(--button-text-color);
     text-transform: uppercase;
     transition: transform 0.15s ease-out;
     will-change: transform;
@@ -279,6 +337,7 @@ nav {
     font-weight: 500;
     font-family: "Geist Mono", monospace;
     text-transform: uppercase;
+    color: var(--text-color);
 }
 
 @media (max-width: 768px) {
@@ -296,5 +355,9 @@ nav {
 
     .create-task-form {
         max-width: 90vw;
+    }
+
+    .nav-menu {
+        gap: 1rem;
     }
 }
