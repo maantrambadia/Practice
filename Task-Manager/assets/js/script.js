@@ -25,10 +25,10 @@ const theme = () => {
   const currentTheme = localStorage.getItem("theme") || "light";
   if (currentTheme === "light") {
     html.setAttribute("data-theme", "light");
-    navThemeSwitcher.innerHTML = `<i class="hgi hgi-stroke hgi-rounded hgi-sun-03"></i>`;
+    navThemeSwitcher.innerHTML = `<i class="ri-sun-line"></i>`;
   } else {
     html.setAttribute("data-theme", "dark");
-    navThemeSwitcher.innerHTML = `<i class="hgi hgi-stroke hgi-rounded hgi-moon-02"></i>`;
+    navThemeSwitcher.innerHTML = `<i class="ri-moon-line"></i>`;
   }
 };
 
@@ -38,11 +38,11 @@ navThemeSwitcher.addEventListener("click", () => {
   const currentTheme = html.dataset.theme;
   if (currentTheme === "light") {
     html.setAttribute("data-theme", "dark");
-    navThemeSwitcher.innerHTML = `<i class="hgi hgi-stroke hgi-rounded hgi-moon-02"></i>`;
+    navThemeSwitcher.innerHTML = `<i class="ri-moon-line"></i>`;
     const currentThemeLocalStorage = localStorage.setItem("theme", "dark");
   } else {
     html.setAttribute("data-theme", "light");
-    navThemeSwitcher.innerHTML = `<i class="hgi hgi-stroke hgi-rounded hgi-sun-03"></i>`;
+    navThemeSwitcher.innerHTML = `<i class="ri-sun-line"></i>`;
     const currentThemeLocalStorage = localStorage.setItem("theme", "light");
   }
 });
@@ -93,9 +93,7 @@ createTaskForm.addEventListener("submit", (e) => {
 
 const pushIntoUI = () => {
   taskCards.innerHTML = "";
-  const tasks =
-    JSON.parse(localStorage.getItem("task")) ||
-    localStorage.setItem("task", "[]");
+  const tasks = JSON.parse(localStorage.getItem("task")) || [];
 
   if (tasks.length > 0) {
     tasks.forEach((e, i) => {
