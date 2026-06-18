@@ -4,7 +4,6 @@ const cancelTaskButton = document.querySelector("#cancel-button");
 const taskModule = document.querySelector(".create-task-module");
 const createTaskForm = document.querySelector("#create-task-form-body");
 const taskCards = document.querySelector(".task-cards");
-const deleteTaskButton = document.querySelector("#delete-task-button");
 
 const createTaskTitle = document.querySelector("#create-task-title");
 const createTaskDescription = document.querySelector(
@@ -17,55 +16,58 @@ const emptyMessage = document.querySelector(".empty-message");
 const navThemeSwitcher = document.querySelector(".nav-theme-switcher");
 const html = document.documentElement;
 
-const activeTasks = [];
+// Initialize from localStorage
+let activeTasks = JSON.parse(localStorage.getItem("task")) || [];
 
 let editIndex = null;
 
+// Theme
 const theme = () => {
   const currentTheme = localStorage.getItem("theme") || "light";
-  if (currentTheme === "light") {
-    html.setAttribute("data-theme", "light");
-    navThemeSwitcher.innerHTML = `<i class="ri-sun-line"></i>`;
-  } else {
-    html.setAttribute("data-theme", "dark");
-    navThemeSwitcher.innerHTML = `<i class="ri-moon-line"></i>`;
-  }
+  html.setAttribute("data-theme", currentTheme);
+  navThemeSwitcher.innerHTML =
+    currentTheme === "light"
+      ? `<i class="ri-sun-line"></i>`
+      : `<i class="ri-moon-line"></i>`;
 };
 
 theme();
 
 navThemeSwitcher.addEventListener("click", () => {
-  const currentTheme = html.dataset.theme;
-  if (currentTheme === "light") {
-    html.setAttribute("data-theme", "dark");
-    navThemeSwitcher.innerHTML = `<i class="ri-moon-line"></i>`;
-    const currentThemeLocalStorage = localStorage.setItem("theme", "dark");
-  } else {
-    html.setAttribute("data-theme", "light");
-    navThemeSwitcher.innerHTML = `<i class="ri-sun-line"></i>`;
-    const currentThemeLocalStorage = localStorage.setItem("theme", "light");
-  }
+  const currentTheme = html.dataset.theme === "light" ? "dark" : "light";
+  html.setAttribute("data-theme", currentTheme);
+  localStorage.setItem("theme", currentTheme);
+
+  navThemeSwitcher.innerHTML =
+    currentTheme === "light"
+      ? `<i class="ri-sun-line"></i>`
+      : `<i class="ri-moon-line"></i>`;
 });
 
+// Open modal
 createTaskButton.addEventListener("click", () => {
   createTaskTitle.textContent = "Create Task";
   createTaskDescription.textContent =
     "Here you can create your task by filling up the details";
   createButtonModule.textContent = "Create";
+  editIndex = null;
+  createTaskForm.reset();
   taskModule.classList.add("show");
 });
 
+// Close modal
 cancelTaskButton.addEventListener("click", () => {
   taskModule.classList.remove("show");
 });
 
+// Submit form
 createTaskForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const taskTitle = e.target[0].value;
-  const taskCategory = e.target[1].value;
+  const taskTitle = e.target[0].value.trim();
+  const taskCategory = e.target[1].value.trim();
 
-  if (taskTitle.trim() === "" || taskCategory.trim() === "") {
+  if (!taskTitle || !taskCategory) {
     alert("Please fill all the details.");
     return;
   }
@@ -78,12 +80,12 @@ createTaskForm.addEventListener("submit", (e) => {
 
   if (editIndex !== null) {
     activeTasks[editIndex] = taskObject;
-    localStorage.setItem("task", JSON.stringify(activeTasks));
     editIndex = null;
   } else {
     activeTasks.push(taskObject);
-    localStorage.setItem("task", JSON.stringify(activeTasks));
   }
+
+  localStorage.setItem("task", JSON.stringify(activeTasks));
 
   createTaskForm.reset();
   taskModule.classList.remove("show");
@@ -91,16 +93,12 @@ createTaskForm.addEventListener("submit", (e) => {
   pushIntoUI();
 });
 
+// Render UI
 const pushIntoUI = () => {
   taskCards.innerHTML = "";
-  let tasks = JSON.parse(localStorage.getItem("task"));
 
-  if (!tasks) {
-    tasks = [];
-  }
-
-  if (tasks.length > 0) {
-    tasks.forEach((e, i) => {
+  if (activeTasks.length > 0) {
+    activeTasks.forEach((e, i) => {
       taskCards.innerHTML += `
       <div class="card ${e.completed ? "done" : ""}">
         <h3 style="text-decoration: ${e.completed ? "line-through" : "none"}">
@@ -135,12 +133,14 @@ const pushIntoUI = () => {
 
 pushIntoUI();
 
+// Toggle complete
 const toggleDone = (i) => {
   activeTasks[i].completed = !activeTasks[i].completed;
   localStorage.setItem("task", JSON.stringify(activeTasks));
   pushIntoUI();
 };
 
+// Edit
 const editTask = (i) => {
   const task = activeTasks[i];
 
@@ -157,6 +157,7 @@ const editTask = (i) => {
   taskModule.classList.add("show");
 };
 
+// Delete
 const deleteTask = (i) => {
   activeTasks.splice(i, 1);
   localStorage.setItem("task", JSON.stringify(activeTasks));
