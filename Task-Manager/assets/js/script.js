@@ -21,14 +21,29 @@ const activeTasks = [];
 
 let editIndex = null;
 
+const theme = () => {
+  const currentTheme = localStorage.getItem("theme") || "light";
+  if (currentTheme === "light") {
+    html.setAttribute("data-theme", "light");
+    navThemeSwitcher.innerHTML = `<i class="hgi hgi-stroke hgi-rounded hgi-sun-03"></i>`;
+  } else {
+    html.setAttribute("data-theme", "dark");
+    navThemeSwitcher.innerHTML = `<i class="hgi hgi-stroke hgi-rounded hgi-moon-02"></i>`;
+  }
+};
+
+theme();
+
 navThemeSwitcher.addEventListener("click", () => {
   const currentTheme = html.dataset.theme;
   if (currentTheme === "light") {
     html.setAttribute("data-theme", "dark");
     navThemeSwitcher.innerHTML = `<i class="hgi hgi-stroke hgi-rounded hgi-moon-02"></i>`;
+    const currentThemeLocalStorage = localStorage.setItem("theme", "dark");
   } else {
     html.setAttribute("data-theme", "light");
     navThemeSwitcher.innerHTML = `<i class="hgi hgi-stroke hgi-rounded hgi-sun-03"></i>`;
+    const currentThemeLocalStorage = localStorage.setItem("theme", "light");
   }
 });
 
@@ -63,9 +78,11 @@ createTaskForm.addEventListener("submit", (e) => {
 
   if (editIndex !== null) {
     activeTasks[editIndex] = taskObject;
+    localStorage.setItem("task", JSON.stringify(activeTasks));
     editIndex = null;
   } else {
     activeTasks.push(taskObject);
+    localStorage.setItem("task", JSON.stringify(activeTasks));
   }
 
   createTaskForm.reset();
@@ -76,9 +93,12 @@ createTaskForm.addEventListener("submit", (e) => {
 
 const pushIntoUI = () => {
   taskCards.innerHTML = "";
+  const tasks =
+    JSON.parse(localStorage.getItem("task")) ||
+    localStorage.setItem("task", "[]");
 
-  if (activeTasks.length > 0) {
-    activeTasks.forEach((e, i) => {
+  if (tasks.length > 0) {
+    tasks.forEach((e, i) => {
       taskCards.innerHTML += `
       <div class="card ${e.completed ? "done" : ""}">
         <h3 style="text-decoration: ${e.completed ? "line-through" : "none"}">
@@ -115,6 +135,7 @@ pushIntoUI();
 
 const toggleDone = (i) => {
   activeTasks[i].completed = !activeTasks[i].completed;
+  localStorage.setItem("task", JSON.stringify(activeTasks));
   pushIntoUI();
 };
 
@@ -136,5 +157,6 @@ const editTask = (i) => {
 
 const deleteTask = (i) => {
   activeTasks.splice(i, 1);
+  localStorage.setItem("task", JSON.stringify(activeTasks));
   pushIntoUI();
 };
