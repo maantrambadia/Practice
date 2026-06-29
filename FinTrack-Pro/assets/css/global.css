@@ -1,0 +1,76 @@
+@font-face {
+    font-family: 'CooperLtBT';
+    src: url('../fonts/CooperLtBT_Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CooperLtBT';
+    src: url('../fonts/CooperLtBT_Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+:root {
+    --bg: #fff9fc;
+    --card-bg: #fccee8;
+    --card-header-bg: #ffe8f5;
+    --button-bg: #f654a5;
+    --theme-switcher-bg: #fccee8;
+
+    --text-color: #500724;
+    --secondary-text-color: #512939;
+    --button-text-color: #500724;
+    --label-color: #6e3a50;
+
+    --border-color: #d39db2;
+    --input-border-color: #c3829b;
+    --button-border-color: #fd1187;
+    --theme-switcher-border-color: #c3829b;
+}
+
+html[data-theme="dark"] {
+    --bg: #1a1418;
+    --card-bg: #2a1f26;
+    --card-header-bg: #33252e;
+    --button-bg: #d93d8f;
+    --theme-switcher-bg: #33252e;
+
+    --text-color: #f5dbe6;
+    --secondary-text-color: #c9a7b6;
+    --button-text-color: #fff0f6;
+    --label-color: #d4a8ba;
+
+    --border-color: #5a3d4a;
+    --input-border-color: #7a5566;
+    --button-border-color: #ff4da6;
+    --theme-switcher-border-color: #5a3d4a;
+}
+
+.theme-switcher {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--theme-switcher-bg);
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    will-change: transform;
+    border: 1px dashed var(--theme-switcher-border-color);
+}
+
+.theme-switcher:active {
+    transform: scale(0.90);
+}
+
+.theme-switcher i {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--text-color);
+}

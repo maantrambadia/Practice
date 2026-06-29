@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Geist+Mono:ital,wght@0,100..900;1,100..900&family=Geist:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/global.css?v1.0.0">
+    <link rel="stylesheet" href="assets/css/login.css?v1.0.0">
+    <script src="assets/js/auth.js?v1.0.0"></script>
+    <script>
+        checkAuth(false);
+    </script>
+    <title>Login | FinTrack Pro</title>
+</head>
+
+<body>
+    <main>
+        <section class="section-1">
+            <div class="company-logo">
+                <h1>FinTrack Pro</h1>
+            </div>
+            <div class="login-form">
+                <div class="form-header">
+                    <h1>Login</h1>
+                    <p>Don't have an account? <a href="./sign-up.html">Sign up</a></p>
+                </div>
+                <div class="form-body">
+                    <form id="loginForm">
+                        <label>Username</label>
+                        <input required type="text" id="loginUsername">
+                        <label>Password</label>
+                        <input required type="password" id="loginPassword">
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <div class="theme-switcher"></div>
+    </main>
+
+    <script src="assets/js/theme-switcher.js?v1.0.0"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+
+            const attempt = loginUser(username, password);
+
+            if (attempt.success) {
+                window.location.replace('index.html');
+            } else {
+                alert(attempt.message);
+            }
+        });
+    </script>
+</body>
+
+</html>

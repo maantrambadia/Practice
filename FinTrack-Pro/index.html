@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Geist+Mono:ital,wght@0,100..900;1,100..900&family=Geist:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="assets/css/global.css?v1.0.0">
+    <link rel="stylesheet" href="assets/css/dashboard.css?v1.0.0">
+    <script src="assets/js/auth.js?v1.0.0"></script>
+    <script>
+        checkAuth(true);
+    </script>
+    <title>Dashboard | FinTrack Pro</title>
+</head>
+
+<body>
+    <main>
+        <section class="section-1">
+            <div class="left-part">
+                <div></div>
+                <div class="nav-button">
+                    <div class="nav-button-wrapper nav-item active" data-target="dashboard-view">
+                        <i class="ri-dashboard-line"></i>
+                    </div>
+                </div>
+                <div class="nav-botton-button">
+                    <div class="nav-button-wrapper" id="openAddModalBtn">
+                        <i class="ri-add-line"></i>
+                    </div>
+                    <div class="nav-button-wrapper" id="logout-button">
+                        <i class="ri-logout-box-line"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="right-part">
+                <div id="dashboard-view" class="view-section active">
+                    <h1>Overview</h1>
+                    <div class="overview-cards">
+                        <div class="card">
+                            <p>Total Balance</p>
+                            <h3 id="displayBalance">$0.00</h3>
+                        </div>
+                        <div class="card">
+                            <p>Total Income</p>
+                            <h3 id="displayIncome">$0.00</h3>
+                        </div>
+                        <div class="card">
+                            <p>Total Expense</p>
+                            <h3 id="displayExpense">$0.00</h3>
+                        </div>
+                        <div class="card">
+                            <p>Total Transactions</p>
+                            <h3 id="displayTransactions">0</h3>
+                        </div>
+                    </div>
+                    <canvas id="cashFlowChart"></canvas> <input type="text" id="searchInput" placeholder="Search...">
+                    <select id="typeFilter">
+                        <option value="all">All</option>
+                        <option value="income">Income</option>
+                        <option value="expense">Expense</option>
+                    </select>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Desc</th>
+                                <th>Category</th>
+                                <th>Amount</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="transactionTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <div class="theme-switcher"></div>
+    </main>
+
+    <div id="transactionModal" class="modal">
+        <div class="modal-card">
+
+            <div class="form-header">
+                <h1>Add Transaction</h1>
+                <p>Enter your transaction details</p>
+            </div>
+
+            <div class="form-body">
+                <form id="transactionForm">
+
+                    <div class="form-group">
+                        <label>Type</label>
+                        <select id="txType">
+                            <option value="expense">Expense</option>
+                            <option value="income">Income</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Amount</label>
+                        <input type="number" id="txAmount" placeholder="0.00">
+                    </div>
+
+                    <div class="form-group full">
+                        <label>Description</label>
+                        <input type="text" id="txDescription" placeholder="e.g. Coffee">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input type="date" id="txDate">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select id="txCategory">
+                            <option>Food</option>
+                            <option>Shopping</option>
+                            <option>Bills</option>
+                        </select>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" id="cancelModal">Cancel</button>
+                        <button type="submit">Save</button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="assets/js/theme-switcher.js?v1.0.0"></script>
+    <script src="assets/js/dashboard.js?v1.0.0"></script>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: "Geist", sans-serif;
+    margin: 0;
+}
+
+main {
+    min-height: 100vh;
+    background-color: var(--bg);
+}
+
+.section-1 {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.company-logo h1 {
+    font-family: 'CooperLtBT', serif;
+    color: var(--text-color);
+}
+
+.login-form {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 1.5rem;
+    background-color: var(--card-bg);
+    border: 1px dashed var(--border-color);
+    overflow: hidden;
+}
+
+.form-header {
+    padding: 2rem;
+    border-radius: 1.5rem;
+    border-bottom: 1px dashed var(--border-color);
+    background-color: var(--card-header-bg);
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.form-header h1 {
+    font-family: 'CooperLtBT', serif;
+    color: var(--text-color);
+}
+
+.form-header p {
+    color: var(--secondary-text-color);
+}
+
+.form-header p a {
+    font-weight: 600;
+    color: var(--secondary-text-color);
+}
+
+.form-body {
+    padding: 2rem;
+}
+
+.form-body form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.form-body form label {
+    font-size: 0.9rem;
+    color: var(--label-color);
+}
+
+.form-body form input {
+    font-family: "Geist", sans-serif;
+    font-size: 0.9rem;
+    padding: 0.7rem;
+    border-radius: 0.8rem;
+    border: 1px dashed var(--input-border-color);
+    background-color: transparent;
+    color: var(--text-color);
+}
+
+.form-body form input:focus {
+    outline: none;
+    border-color: #f654a5;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.108);
+}
+
+.form-body form button {
+    font-family: "Geist Mono", monospace;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.7rem 1rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    border: 1px solid var(--button-border-color);
+    background-color: var(--button-bg);
+    color: var(--button-text-color);
+    text-transform: uppercase;
+    transition: transform 0.15s ease-out;
+    will-change: transform;
+}
+
+.form-body form button:active {
+    transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+
+    .form-header,
+    .form-body {
+        padding: 1.5rem;
+    }
+}
